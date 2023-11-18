@@ -65,7 +65,7 @@ Other things you may want to consider are how to help your colleagues continue y
 ## Hints
 Here are some mockups drawn by an Earth employee with no design skills at all. You may consider these to have been provided by the domain expert. You do not have to follow them, or if it helps, you can use them for your implementation, it is completely up to you.
 
-![Pandin login](./login.png "Pandin login")
+[![Pandin login](./login.png "Pandin login")](https://github.com/OceanHealthSystems/frontend-angular-takehome-ashish/blob/main/login.png)
 ![tasks](./tasks.png "tasks")
 ![Jane works on staff data](./details.png "Jane works on staff data")
 
