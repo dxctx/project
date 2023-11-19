@@ -1,0 +1,60 @@
+<p-accordion [activeIndex]="0" class="w-full">
+  <p-accordionTab header="Heather Wood">
+    <div class="">
+      <div class="mb-3">
+        <p class="font-bold text-lg">
+          Role: <span class="font-normal ml-3">Physioterapist</span>
+        </p>
+        <p class="font-bold text-lg">
+          Mobile:<span class="font-normal ml-3">555 5555 555</span>
+        </p>
+      </div>
+      <div class="mb-3">
+        <form action="" class="w-full flex justify-between">
+          <div class="form-group">
+            <label class="font-bold text-lg" for="">Vaccination Status</label>
+            <select
+              name=""
+              id=""
+              class="ml-4 border rounded border-black p-3 cursor-pointer"
+            >
+              <option value="">Not Assessed</option>
+              <option value="">---</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="mb-3">
+        <form action="" class="w-full justify-between">
+          <div class="form-group flex flex-col">
+            <label class="font-bold text-lg mb-3" for=""
+              >Medical background as reported:</label
+            >
+            <textarea
+              class="border rounded border-black p-3 cursor-pointer"
+            ></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="mb-3">
+        <form action="" class="w-full justify-between">
+          <div class="form-group flex flex-col">
+            <label class="font-bold text-lg mb-3" for=""
+              >Infection control professional's notes:</label
+            >
+            <textarea
+              class="border rounded border-black p-3 cursor-pointer"
+            ></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="w-full flex justify-end">
+        <button
+          class="py-3 px-8 rounded shadow-lg bg-black text-white font-bold"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </p-accordionTab>
+</p-accordion>
