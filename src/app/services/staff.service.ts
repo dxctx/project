@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 export interface Person {
+  id: number;
   name: string;
   role: string;
   medicalBackground: string;
@@ -21,6 +22,7 @@ export interface Vaccine {
 export class StaffService {
   private persons: Person[] = [
     {
+      id: 1,
       name: 'John',
       role: 'Doctor',
       medicalBackground: 'Medical Doctor',
@@ -28,6 +30,7 @@ export class StaffService {
       clinicalNotes: ['Normal blood pressure', 'No known allergies'],
     },
     {
+      id: 2,
       name: 'Mary',
       role: 'Nurse',
       medicalBackground: 'Registered Nurse',
@@ -35,6 +38,7 @@ export class StaffService {
       clinicalNotes: ['Leg injury in the healing process'],
     },
     {
+      id: 3,
       name: 'Peter',
       role: 'Paramedic',
       medicalBackground: 'Emergency Medical Technician',
@@ -42,6 +46,7 @@ export class StaffService {
       clinicalNotes: ['History of asthma'],
     },
     {
+      id: 4,
       name: 'Anna',
       role: 'Pharmacist',
       medicalBackground: 'Doctor of Pharmacy',
@@ -49,6 +54,7 @@ export class StaffService {
       clinicalNotes: ['Elevated eye pressure'],
     },
     {
+      id: 5,
       name: 'Louis',
       role: 'Lab Technician',
       medicalBackground: 'Clinical Laboratory and Biomedical Technician',
@@ -110,5 +116,14 @@ export class StaffService {
         d.toLowerCase().includes(disease.toLowerCase())
       )
     );
+  }
+  addClinicalNotes(personId: number, clinicalNotes: string) {
+    const person = this.persons.find((p) => p.id === personId);
+    if (person) {
+      person.clinicalNotes.push(clinicalNotes);
+    }
+
+    console.log(this.persons);
+    return this.persons;
   }
 }
