@@ -104,7 +104,11 @@ export class StaffService {
     return this.persons.filter((person) => person.name.includes(name));
   }
 
-  searchVaccinesByName(name: string) {
-    return this.vaccines.filter((vaccine) => vaccine.name.includes(name));
+  searchVaccinesByName(disease: string) {
+    return this.vaccines.filter((vaccine) =>
+      vaccine.diseasesToTreat.some((d) =>
+        d.toLowerCase().includes(disease.toLowerCase())
+      )
+    );
   }
 }
