@@ -25,14 +25,13 @@ export class CardInfoComponent implements OnInit {
     this.showInfectionControl = true;
   }
 
-  addShowInfectionControl(id: number) {
-    this.staffService.addClinicalNotes(id, this.infectionNote);
-    this.infectionNote = '';
+  addInfectionControl(person: Person) {
+    this.staffService.addClinicalNotes(person.id, this.infectionNote);
     this.showInfectionControl = false;
+    console.log(this.infectionNote, person);
   }
-  addMedicalBackground(id: number) {
-    this.staffService.editMedicalBackground(id, this.medicalNote);
-    this.medicalNote = '';
+  addMedicalBackground() {
+    //this.staffService.editMedicalBackground(id, this.medicalNote);
     this.showMedicalBakground = false;
   }
 }

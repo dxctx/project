@@ -15,7 +15,7 @@
           <h2 class="font-bold mb-1 flex justify-between items-center">
             Medical background as reported:
             <a
-              class="px-5 py-2 rounded-lg bg-black text-white"
+              class="px-5 py-2 rounded-lg bg-black text-white cursor-pointer"
               (click)="showMedicalBakgroundForm()"
               >Add Note</a
             >
@@ -32,9 +32,16 @@
         <div class="text-lg flex flex-col mb-3">
           <h2 class="font-bold mb-1 flex justify-between items-center">
             Infection control professional's notes:
-            <a class="px-5 py-2 rounded-lg bg-black text-white">Add Note</a>
+            <a
+              class="px-3 py-2 rounded-lg bg-black text-white cursor-pointer"
+              (click)="showInfectionControlForm()"
+              >Add Note</a
+            >
           </h2>
-          <ul class="w-full rounded-lg px-5">
+          <ul
+            class="w-full rounded-lg px-5"
+            *ngIf="!showInfectionControl; else InfectionControlForm"
+          >
             <li class="list-disc" *ngFor="let notes of person.clinicalNotes">
               {{ notes }}
             </li>
@@ -75,18 +82,15 @@
       <ng-template #MedicalBackgroundForm let-person>
         <form action="" class="w-full justify-between">
           <div class="form-group flex flex-col">
-            <label class="font-bold text-lg mb-3" for=""
-              >Medical background as reported:</label
-            >
             <textarea
               [(ngModel)]="medicalNote"
               name="medicalNote"
               class="border rounded border-black p-3 cursor-pointer"
             ></textarea>
           </div>
-          <div class="w-full flex justify-end">
+          <div class="w-full flex justify-end mt-3">
             <button
-            (click)="addMedicalBackground(person.id)"
+              (submit)="addMedicalBackground()"
               class="py-3 px-8 rounded shadow-lg bg-black text-white font-bold"
             >
               Save
@@ -96,18 +100,20 @@
       </ng-template>
 
       <ng-template #InfectionControlForm>
-        <form action="" class="w-full justify-between">
+        <form
+          (ngSubmit)="addInfectionControl(person)"
+          class="w-full justify-between mt-3"
+        >
           <div class="form-group flex flex-col">
-            <label class="font-bold text-lg mb-3" for=""
-              >Infection control professional's notes:</label
-            >
-            <textarea
+            <input
+              name="infectionNote"
               class="border rounded border-black p-3 cursor-pointer"
-            ></textarea>
+              [(ngModel)]="infectionNote"
+            />
           </div>
           <div class="w-full flex justify-end">
             <button
-              class="py-3 px-8 rounded shadow-lg bg-black text-white font-bold"
+              class="py-3 px-8 rounded shadow-lg bg-black text-white font-bold mt-3"
             >
               Save
             </button>
