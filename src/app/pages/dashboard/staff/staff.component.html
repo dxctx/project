@@ -5,12 +5,15 @@
       <form action="" class="flex w-full">
         <div class="form-group mr-5">
           <input
+            name="termPeople"
+            [(ngModel)]="termPeople"
             type="text"
             placeholder="Search"
             class="py-2 px-5 border-b border-black"
           />
         </div>
         <button
+          (click)="searchPeople()"
           class="border border-black py-2 px-5 rounded hover:bg-black hover:text-white transition-all"
         >
           Search
@@ -24,12 +27,15 @@
       <form action="" class="flex">
         <div class="form-group mr-5">
           <input
+            name="termVaccine"
+            [(ngModel)]="termVaccine"
             type="text"
             placeholder="Search"
             class="py-2 px-5 border-b border-black"
           />
         </div>
         <button
+          (click)="searchVaccine()"
           class="border border-black py-2 px-5 rounded hover:bg-black hover:text-white transition-all"
         >
           Search

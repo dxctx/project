@@ -10,6 +10,7 @@ import { StaffComponent } from './staff/staff.component';
 import { CardInfoComponent } from './components/card-info/card-info.component';
 import { InfoVaccineComponent } from './components/info-vaccine/info-vaccine.component';
 import { TaskInfoComponent } from './components/task-info.component.ts/task-info.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { TaskInfoComponent } from './components/task-info.component.ts/task-info
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    PrimengModule
+    PrimengModule,
+    FormsModule
   ]
 })
 export class DashboardModule { }
