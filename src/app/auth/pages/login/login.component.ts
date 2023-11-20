@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,10 +13,17 @@ export class LoginComponent {
   formLogin!: FormGroup;
 
   ngOnInit() {
-    this.formLogin = this.fb.group({});
+    this.formLogin = this.fb.group({
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+    });
   }
 
   redirect() {
-    this.router.navigateByUrl('/pages/dashboard');
+    if (this.formLogin.valid) {
+      localStorage.setItem('blossom_user', JSON.stringify(this.formLogin.value));
+      this.router.navigateByUrl('/pages/dashboard');
+    }
+    this.formLogin.reset();
   }
 }
