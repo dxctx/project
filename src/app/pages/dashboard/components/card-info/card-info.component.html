@@ -1,9 +1,9 @@
-<p-accordion [activeIndex]="0" class="w-full">
-  <p-accordionTab header="Heather Wood">
+<p-accordion   class="w-full" >
+  <p-accordionTab header="{{person.name}}" *ngFor="let person of persons">
     <div class="">
       <div class="mb-3">
         <p class="font-bold text-lg">
-          Role: <span class="font-normal ml-3">Physioterapist</span>
+          Role: <span class="font-normal ml-3">{{person.role}}</span>
         </p>
         <p class="font-bold text-lg">
           Mobile:<span class="font-normal ml-3">555 5555 555</span>
