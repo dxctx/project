@@ -63,7 +63,7 @@ export class StaffService {
       warnings: ['Keep refrigerated', 'Do not freeze'],
       sideEffects: ['Mild fever', 'Fatigue', 'Pain at injection site'],
       effectDuration: '6 months',
-      diseasesToTreat: ['COVID-19'],
+      diseasesToTreat: ['covid-19'],
     },
     {
       name: 'Influenza',
@@ -73,28 +73,28 @@ export class StaffService {
       ],
       sideEffects: ['Slight soreness at injection site', 'Low-grade fever'],
       effectDuration: '1 year',
-      diseasesToTreat: ['Influenza'],
+      diseasesToTreat: ['influenza'],
     },
     {
       name: 'Hepatitis B',
       warnings: ['Requires multiple doses for full effectiveness'],
       sideEffects: ['Mild pain at the injection site', 'Fatigue'],
       effectDuration: 'Lifelong immunity (with complete vaccination)',
-      diseasesToTreat: ['Hepatitis B'],
+      diseasesToTreat: ['hepatitis B'],
     },
     {
       name: 'Tetanus',
       warnings: ['Boosters needed every 10 years'],
       sideEffects: ['Sore arm', 'Low-grade fever'],
       effectDuration: '10 years (with booster shots)',
-      diseasesToTreat: ['Tetanus'],
+      diseasesToTreat: ['tetanus'],
     },
     {
       name: 'MMR (Measles, Mumps, Rubella)',
       warnings: ['Not recommended during pregnancy'],
       sideEffects: ['Mild rash', 'Fever'],
       effectDuration: 'Lifetime immunity (with complete vaccination)',
-      diseasesToTreat: ['Measles', 'Mumps', 'Rubella'],
+      diseasesToTreat: ['measles', 'mumps', 'rubella'],
     },
   ];
 
