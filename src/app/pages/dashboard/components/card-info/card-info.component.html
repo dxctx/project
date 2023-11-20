@@ -1,43 +1,78 @@
-<p-accordion   class="w-full" >
-  <p-accordionTab header="{{person.name}}" *ngFor="let person of persons">
+<p-accordion class="w-full">
+  <p-accordionTab header="{{ person.name }}" *ngFor="let person of persons">
     <div class="">
       <div class="mb-3">
-        <p class="font-bold text-lg">
-          Role: <span class="font-normal ml-3">{{person.role}}</span>
+        <p class="font-bold text-lg mb-3">
+          Role: <span class="font-normal ml-3">{{ person.role }}</span>
         </p>
-        <p class="font-bold text-lg">
+        <p class="font-bold text-lg mb-3">
           Mobile:<span class="font-normal ml-3">555 5555 555</span>
         </p>
+        <p class="font-bold text-lg mb-3">
+          Vaccination Status:<span class="font-normal ml-3">Not Assessed</span>
+        </p>
+        <div class="text-lg flex flex-col mb-3">
+          <h2 class="font-bold mb-1 flex justify-between items-center">
+            Medical background as reported:
+            <a class="px-5 py-2 rounded-lg bg-black text-white">Add Note</a>
+          </h2>
+          <ul class="w-full border border-black rounded-lg p-5">
+            <li class="">
+              {{ person.medicalBackground }}
+            </li>
+          </ul>
+        </div>
+        <div class="text-lg flex flex-col mb-3">
+          <h2 class="font-bold mb-1 flex justify-between items-center">
+            Infection control professional's notes:
+            <a class="px-5 py-2 rounded-lg bg-black text-white">Add Note</a>
+          </h2>
+          <ul class="w-full rounded-lg px-5">
+            <li class="list-disc" *ngFor="let notes of person.clinicalNotes">
+              {{ notes }}
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="mb-3">
-        <form action="" class="w-full flex justify-between">
-          <div class="form-group">
-            <label class="font-bold text-lg" for="">Vaccination Status</label>
-            <select
-              name=""
-              id=""
-              class="ml-4 border rounded border-black p-3 cursor-pointer"
-            >
-              <option value="">Not Assessed</option>
-              <option value="">---</option>
-            </select>
-          </div>
-        </form>
-      </div>
-      <div class="mb-3">
-        <form action="" class="w-full justify-between">
-          <div class="form-group flex flex-col">
-            <label class="font-bold text-lg mb-3" for=""
-              >Medical background as reported:</label
-            >
-            <textarea
-              class="border rounded border-black p-3 cursor-pointer"
-              
-            ></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="mb-3">
+      <ng-template>
+        <div class="mb-3">
+          <form action="" class="w-full flex justify-between">
+            <div class="form-group">
+              <label class="font-bold text-lg" for="">Vaccination Status</label>
+              <select
+                name=""
+                id=""
+                class="ml-4 border rounded border-black p-3 cursor-pointer"
+              >
+                <option value="">Not Assessed</option>
+                <option value="">---</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="mb-3">
+          <form action="" class="w-full justify-between">
+            <div class="form-group flex flex-col">
+              <label class="font-bold text-lg mb-3" for=""
+                >Medical background as reported:</label
+              >
+              <textarea
+                class="border rounded border-black p-3 cursor-pointer"
+              ></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="mb-3"></div>
+        <div class="w-full flex justify-end">
+
+        </div>
+      </ng-template>
+
+      <ng-template #add> 
+
+      </ng-template>
+
+      <ng-template>
         <form action="" class="w-full justify-between">
           <div class="form-group flex flex-col">
             <label class="font-bold text-lg mb-3" for=""
@@ -47,15 +82,13 @@
               class="border rounded border-black p-3 cursor-pointer"
             ></textarea>
           </div>
-        </form>
-      </div>
-      <div class="w-full flex justify-end">
-        <button
+          <button
           class="py-3 px-8 rounded shadow-lg bg-black text-white font-bold"
         >
           Save
         </button>
-      </div>
+        </form>
+      </ng-template>
     </div>
   </p-accordionTab>
 </p-accordion>
