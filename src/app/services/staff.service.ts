@@ -126,4 +126,13 @@ export class StaffService {
     console.log(this.persons);
     return this.persons;
   }
+
+  editMedicalBackground(personId: number, medicalBackground: string) {
+    const person = this.persons.find((p) => p.id === personId);
+    if (person) {
+      person.medicalBackground = medicalBackground;
+    }
+    console.log(this.persons);
+    return this.persons;
+  }
 }

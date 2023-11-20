@@ -1,10 +1,29 @@
-<p-accordion [activeIndex]="0">
-    <p-accordionTab header="Covid Vaccine">
-        <div class="">
-            <h3 class="font-bold">Covid-19</h3>
-            <p class="font-bold">Warnings:<span class="ml-3 font-normal">Information here !!!</span></p>
-            <p class="font-bold">Effect duration:<span class="ml-3 font-normal">Information here !!!</span></p>
-            <p class="font-bold">Diseases to be treated:<span class="ml-3 font-normal">Information here !!!</span></p>
-        </div>
-    </p-accordionTab>
+<p-accordion>
+  <p-accordionTab
+    header="{{ vaccine.name }} Vaccine"
+    *ngFor="let vaccine of vaccines"
+  >
+    <div class="">
+      <h3 class="font-bold">{{ vaccine.name }}</h3>
+      <p class="font-bold">
+        Warnings:<span
+          class="ml-3 font-normal"
+          *ngFor="let warning of vaccine.warnings"
+          >{{ warning }}</span
+        >
+      </p>
+      <p class="font-bold">
+        Effect duration:<span class="ml-3 font-normal">{{
+          vaccine.effectDuration
+        }}</span>
+      </p>
+      <p class="font-bold">
+        Diseases to be treated:<span
+          class="ml-3 font-normal"
+          *ngFor="let disease of vaccine.diseasesToTreat"
+          >{{ disease }}</span
+        >
+      </p>
+    </div>
+  </p-accordionTab>
 </p-accordion>

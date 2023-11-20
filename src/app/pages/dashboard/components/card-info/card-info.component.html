@@ -14,9 +14,16 @@
         <div class="text-lg flex flex-col mb-3">
           <h2 class="font-bold mb-1 flex justify-between items-center">
             Medical background as reported:
-            <a class="px-5 py-2 rounded-lg bg-black text-white">Add Note</a>
+            <a
+              class="px-5 py-2 rounded-lg bg-black text-white"
+              (click)="showMedicalBakgroundForm()"
+              >Add Note</a
+            >
           </h2>
-          <ul class="w-full border border-black rounded-lg p-5">
+          <ul
+            class="w-full border border-black rounded-lg p-5"
+            *ngIf="!showMedicalBakground; else MedicalBackgroundForm"
+          >
             <li class="">
               {{ person.medicalBackground }}
             </li>
@@ -63,16 +70,32 @@
           </form>
         </div>
         <div class="mb-3"></div>
-        <div class="w-full flex justify-end">
-
-        </div>
       </ng-template>
 
-      <ng-template #add> 
-
+      <ng-template #MedicalBackgroundForm let-person>
+        <form action="" class="w-full justify-between">
+          <div class="form-group flex flex-col">
+            <label class="font-bold text-lg mb-3" for=""
+              >Medical background as reported:</label
+            >
+            <textarea
+              [(ngModel)]="medicalNote"
+              name="medicalNote"
+              class="border rounded border-black p-3 cursor-pointer"
+            ></textarea>
+          </div>
+          <div class="w-full flex justify-end">
+            <button
+            (click)="addMedicalBackground(person.id)"
+              class="py-3 px-8 rounded shadow-lg bg-black text-white font-bold"
+            >
+              Save
+            </button>
+          </div>
+        </form>
       </ng-template>
 
-      <ng-template>
+      <ng-template #InfectionControlForm>
         <form action="" class="w-full justify-between">
           <div class="form-group flex flex-col">
             <label class="font-bold text-lg mb-3" for=""
@@ -82,11 +105,13 @@
               class="border rounded border-black p-3 cursor-pointer"
             ></textarea>
           </div>
-          <button
-          class="py-3 px-8 rounded shadow-lg bg-black text-white font-bold"
-        >
-          Save
-        </button>
+          <div class="w-full flex justify-end">
+            <button
+              class="py-3 px-8 rounded shadow-lg bg-black text-white font-bold"
+            >
+              Save
+            </button>
+          </div>
         </form>
       </ng-template>
     </div>
