@@ -28,10 +28,9 @@ export class CardInfoComponent implements OnInit {
   addInfectionControl(person: Person) {
     this.staffService.addClinicalNotes(person.id, this.infectionNote);
     this.showInfectionControl = false;
-    console.log(this.infectionNote, person);
   }
-  addMedicalBackground() {
-    //this.staffService.editMedicalBackground(id, this.medicalNote);
+  addMedicalBackground(person: Person) {
+    this.staffService.editMedicalBackground(person.id, this.medicalNote);
     this.showMedicalBakground = false;
   }
 }

@@ -122,8 +122,6 @@ export class StaffService {
     if (person) {
       person.clinicalNotes.push(clinicalNotes);
     }
-
-    console.log(this.persons);
     return this.persons;
   }
 
@@ -132,7 +130,6 @@ export class StaffService {
     if (person) {
       person.medicalBackground = medicalBackground;
     }
-    console.log(this.persons);
     return this.persons;
   }
 }
